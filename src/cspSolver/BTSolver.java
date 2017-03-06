@@ -220,7 +220,16 @@ public class BTSolver implements Runnable{
 	 */
 	private Variable getMRV()
 	{
-		return null;
+		Variable min = null;
+		for(Variable v : network.getVariables())
+		{
+			if(!v.isAssigned())
+			{
+				if(min == null || v.getDomain().getValues().size() < min.getDomain().getValues().size())
+					min = v;
+			}
+		}
+		return min;
 	}
 	
 	/**
@@ -229,7 +238,30 @@ public class BTSolver implements Runnable{
 	 */
 	private Variable getDegree()
 	{
-		return null;
+		int constraints = 0;
+		Variable mostConstrained = null;
+		for(Variable v : network.getVariables())
+		{
+			if(!v.isAssigned())
+			{
+				int constraintCount = 0;
+				List<Constraint> involvedConstraints = network.getConstraintsContainingVariable(v);
+				for(Constraint c : involvedConstraints)
+				{
+					for(Variable constrainedVar : c.vars)
+					{
+						if(!constrainedVar.isAssigned() && constrainedVar != v)
+							constraintCount++;
+					}
+				}
+				if(constraintCount > constraints)
+				{
+					constraints = constraintCount;
+					mostConstrained = v;
+				}
+			}
+		}
+		return mostConstrained;
 	}
 	
 	/**
