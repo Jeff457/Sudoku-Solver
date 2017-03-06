@@ -196,16 +196,20 @@ public class BTSolver implements Runnable{
 		return false;
 	}
 
-	//TODO
+	//TODO---Implement Naked Pairs
 	private boolean nakedPairs()
 	{
 		return false;
 	}
 
-	//TODO
+	//TODO---Implement Naked Triples
 	private boolean nakedTriples()
 	{
-		return false;
+		boolean success = false;
+		for(Constraint constraint : network.getConstraints())
+			if(constraint.propagateNakedTriples())
+				success = true;
+		return success;
 	}
 
 	/**

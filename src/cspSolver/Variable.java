@@ -185,6 +185,12 @@ public class Variable implements Iterable<Integer>
 			modified = true;
 		}
 	}
+
+	public void removeValuesFromDomain(Iterable<Integer> values)
+	{
+		for(Integer i : values)
+			removeValueFromDomain(i);
+	}
 	
 	/**
 	 * Removes a single value from the domain of V.

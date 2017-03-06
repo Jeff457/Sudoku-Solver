@@ -138,7 +138,7 @@ public class Constraint{
 	/**
 	 * TODO: Implement naked triples
 	 */
-	public void propagateNakedTriples()
+	public boolean propagateNakedTriples()
 	{
 //		SortedSet<Variable> nakedTriples = new TreeSet<>(new Comparator<Variable>() {
 //			@Override
@@ -197,9 +197,12 @@ public class Constraint{
 			for(Variable v : vars)
 			{
 				if(!targets.contains(v))
-					v.getDomain().removeDomain(d);
+					v.removeValuesFromDomain(d);
 			}
+			return true;
 		}
+
+		return false;
 	}
 
 	/**
