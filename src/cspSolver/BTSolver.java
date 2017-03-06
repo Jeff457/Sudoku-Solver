@@ -29,10 +29,12 @@ public class BTSolver implements Runnable{
 	public enum VariableSelectionHeuristic 		{ None, MinimumRemainingValue, Degree };
 	public enum ValueSelectionHeuristic 		{ None, LeastConstrainingValue };
 	public enum ConsistencyCheck				{ None, ForwardChecking, ArcConsistency };
+	public enum HeuristicCheck					{ None, NakedPairs, NakedTriples, Both}
 	
 	private VariableSelectionHeuristic varHeuristics;
 	private ValueSelectionHeuristic valHeuristics;
 	private ConsistencyCheck cChecks;
+	private HeuristicCheck heurCheck;
 	//===============================================================================
 	// Constructors
 	//===============================================================================
@@ -62,6 +64,11 @@ public class BTSolver implements Runnable{
 	public void setConsistencyChecks(ConsistencyCheck cc)
 	{
 		this.cChecks = cc;
+	}
+
+	public void setHeuristicCheck(HeuristicCheck check)
+	{
+		this.heurCheck = check;
 	}
 	//===============================================================================
 	// Accessors
@@ -138,6 +145,17 @@ public class BTSolver implements Runnable{
 		}
 		return isConsistent;
 	}
+
+	private boolean checkHeuristic()
+	{
+		if(heurCheck == HeuristicCheck.NakedPairs)
+			return nakedPairs();
+		if(heurCheck == HeuristicCheck.NakedTriples)
+			return nakedTriples();
+		if(heurCheck == HeuristicCheck.Both)
+			return nakedPairs() && nakedTriples();
+		return true;
+	}
 	
 	/**
 	 * default consistency check. Ensures no two variables are assigned to the same value.
@@ -177,7 +195,19 @@ public class BTSolver implements Runnable{
 	{
 		return false;
 	}
-	
+
+	//TODO
+	private boolean nakedPairs()
+	{
+		return false;
+	}
+
+	//TODO
+	private boolean nakedTriples()
+	{
+		return false;
+	}
+
 	/**
 	 * Selects the next variable to check.
 	 * @return next variable to check. null if there are no more variables to check. 
@@ -389,10 +419,9 @@ public class BTSolver implements Runnable{
 				//check a value
 				v.updateDomain(new Domain(i));
 				numAssignments++;
-				boolean isConsistent = checkConsistency();
-				
+
 				//move to the next assignment
-				if(isConsistent)
+				if(checkConsistency() && checkHeuristic())
 				{		
 					solve(level + 1);
 				}
