@@ -1,6 +1,7 @@
 package cspSolver;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 
 import sudoku.Converter;
@@ -240,23 +241,28 @@ public class BTSolver implements Runnable{
 	{
 		int constraints = 0;
 		Variable mostConstrained = null;
+
+		//We are selecting a variable so go through all the variables
 		for(Variable v : network.getVariables())
 		{
+			//We are only looking for unassigned variables
 			if(!v.isAssigned())
 			{
-				int constraintCount = 0;
+				//Store all the unassigned variables that are constrained with Variable v
+				HashSet<Variable> unassignedVars = new HashSet<>();
 				List<Constraint> involvedConstraints = network.getConstraintsContainingVariable(v);
+
 				for(Constraint c : involvedConstraints)
 				{
-					for(Variable constrainedVar : c.vars)
-					{
-						if(!constrainedVar.isAssigned() && constrainedVar != v)
-							constraintCount++;
-					}
+					for(Variable v2 : c.vars)
+						if(!v2.isAssigned() && !v2.equals(v))
+							unassignedVars.add(v2);
 				}
-				if(constraintCount > constraints)
+
+				//Now the Set of vars contains all the DISTINCT unassigned constrained variables
+				if(unassignedVars.size() > constraints)
 				{
-					constraints = constraintCount;
+					constraints = unassignedVars.size();
 					mostConstrained = v;
 				}
 			}
