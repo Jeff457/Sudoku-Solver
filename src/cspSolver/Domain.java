@@ -147,7 +147,10 @@ public class Domain implements Iterable<Integer>{
 
 	public boolean isSubsetOf(Domain domain)
 	{
-		//TODO--implement
+		for (int val : this) {
+			if (!domain.contains(val))
+				return false;
+		}
 		return true;
 	}
 
