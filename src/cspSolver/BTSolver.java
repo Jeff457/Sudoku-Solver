@@ -397,21 +397,18 @@ public class BTSolver implements Runnable{
 		startTime = System.currentTimeMillis();
 		try {
 
+			//TODO---determine if this is allowed
 			//Trim down starting variable domains using constraint propegation
-			//according to the number of assigned values we were given
-			int baseAssignedCount = 0;
-			for(Variable v : network.getVariables())
-				if(v.isAssigned())
-					baseAssignedCount++;
-
-			for(int i = 0; i < baseAssignedCount; i++)
-				for(Constraint c : network.getConstraints())
-					c.propagateConstraint();
-
+			for(Constraint c : network.getConstraints())
+				c.propagateConstraint();
+/*
 			SudokuFile f = Converter.ConstraintNetworkToSudokuFile(network,sudokuGrid.getN(),sudokuGrid.getP(),sudokuGrid.getQ());
 			System.out.println();
 			System.out.println(f);
 
+			System.out.println();
+			System.out.println(network.isConsistent());
+*/
 			solve(0);
 		}catch (VariableSelectionException e)
 		{
