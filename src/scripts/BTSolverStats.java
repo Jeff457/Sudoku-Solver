@@ -16,9 +16,10 @@ import cspSolver.BTSolver.VariableSelectionHeuristic;
 public class BTSolverStats {
 
 	// Change these to test different configurations for the solver. 
-	static ConsistencyCheck cc = ConsistencyCheck.None;
+	static ConsistencyCheck cc = ConsistencyCheck.ForwardChecking;
 	static ValueSelectionHeuristic valsh = ValueSelectionHeuristic.None;
 	static VariableSelectionHeuristic varsh = VariableSelectionHeuristic.MinimumRemainingValue;
+	static BTSolver.HeuristicCheck check = BTSolver.HeuristicCheck.NakedTriples;
 	
 	public static List<SudokuFile> getPuzzlesFromFolder(File folder) {
 	    List<SudokuFile> puzzles = new ArrayList<SudokuFile>();
@@ -37,6 +38,7 @@ public class BTSolverStats {
 		solver.setConsistencyChecks(cc);
 		solver.setValueSelectionHeuristic(valsh);
 		solver.setVariableSelectionHeuristic(varsh);
+		solver.setHeuristicCheck(check);
 		
 		Thread t1 = new Thread(solver);
 		try

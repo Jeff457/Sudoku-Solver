@@ -176,13 +176,21 @@ public class BTSolver implements Runnable{
 		return true;
 	}
 
-	
-	/**
-	 * TODO: Implement forward checking. 
-	 */
+
 	private boolean forwardChecking()
 	{
-		return false;
+		for (Variable v : network.getVariables())
+		{
+			if (v.isAssigned())
+			{
+				for (Variable vOther : network.getNeighborsOfVariable(v))
+				{
+					if (!vOther.isAssigned())
+						vOther.removeValueFromDomain(v.getAssignment());
+				}
+			}
+		}
+		return network.isConsistent();
 	}
 	
 	/**
@@ -202,11 +210,10 @@ public class BTSolver implements Runnable{
 	//TODO---Implement Naked Triples
 	private boolean nakedTriples()
 	{
-		boolean success = false;
 		for(Constraint constraint : network.getConstraints())
-			if(constraint.propagateNakedTriples())
-				success = true;
-		return success;
+			constraint.propagateNakedTriples();
+
+		return network.isConsistent();
 	}
 
 	/**
@@ -247,7 +254,7 @@ public class BTSolver implements Runnable{
 	}
 
 	/**
-	 * TODO: Implement MRV heuristic
+	 * 
 	 * @return variable with minimum remaining values that isn't assigned, null if all variables are assigned. 
 	 */
 	private Variable getMRV()
@@ -399,8 +406,8 @@ public class BTSolver implements Runnable{
 
 			//TODO---determine if this is allowed
 			//Trim down starting variable domains using constraint propegation
-			for(Constraint c : network.getConstraints())
-				c.propagateConstraint();
+//			for(Constraint c : network.getConstraints())
+//				c.propagateConstraint();
 /*
 			SudokuFile f = Converter.ConstraintNetworkToSudokuFile(network,sudokuGrid.getN(),sudokuGrid.getP(),sudokuGrid.getQ());
 			System.out.println();
@@ -410,6 +417,10 @@ public class BTSolver implements Runnable{
 			System.out.println(network.isConsistent());
 */
 			solve(0);
+
+			SudokuFile f = Converter.ConstraintNetworkToSudokuFile(network,sudokuGrid.getN(),sudokuGrid.getP(),sudokuGrid.getQ());
+			System.out.println();
+			System.out.println(f);
 		}catch (VariableSelectionException e)
 		{
 			System.out.println("error with variable selection heuristic.");
