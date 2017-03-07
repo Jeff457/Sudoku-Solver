@@ -18,7 +18,7 @@ public class BTSolverStats {
 	// Change these to test different configurations for the solver. 
 	static ConsistencyCheck cc = ConsistencyCheck.None;
 	static ValueSelectionHeuristic valsh = ValueSelectionHeuristic.None;
-	static VariableSelectionHeuristic varsh = VariableSelectionHeuristic.None;
+	static VariableSelectionHeuristic varsh = VariableSelectionHeuristic.MinimumRemainingValue;
 	
 	public static List<SudokuFile> getPuzzlesFromFolder(File folder) {
 	    List<SudokuFile> puzzles = new ArrayList<SudokuFile>();
@@ -86,6 +86,7 @@ public class BTSolverStats {
 		puzzles = puzzles.subList(0, 10);
 		for(SudokuFile sf : puzzles)
 		{
+			System.out.println(sf);
 			BTSolver solver = new BTSolver(sf);
 			statistics.add(testSolver(solver));
 			System.out.println(statistics.get(statistics.size()-1).toString());

@@ -1,8 +1,5 @@
 package cspSolver;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 import sudoku.Converter;
 import sudoku.SudokuFile;
@@ -349,7 +346,34 @@ public class BTSolver implements Runnable{
 	 */
 	public List<Integer> getValuesLCVOrder(Variable v)
 	{
-		return null;
+		ArrayList<Integer> domain = new ArrayList<>(v.getDomain().getValues());
+		final HashMap<Integer,Integer> cache = new HashMap<>();
+		Collections.sort(domain, new Comparator<Integer>()
+		{
+			@Override
+			public int compare(Integer val1, Integer val2)
+			{
+				int val1Conflicts = Integer.MAX_VALUE;
+				int val2Conflicts = Integer.MAX_VALUE;
+
+				if(cache.containsKey(val1))
+					val1Conflicts = cache.get(val1);
+				else
+				{
+
+					cache.put(val1,val1Conflicts);
+				}
+
+				if(cache.containsKey(val2))
+					val2Conflicts = cache.get(val2);
+				else
+				{
+					cache.put(val2,val2Conflicts);
+				}
+				return 0;
+			}
+		});
+		return domain;
 	}
 	/**
 	 * Called when solver finds a solution
@@ -371,6 +395,14 @@ public class BTSolver implements Runnable{
 	{
 		startTime = System.currentTimeMillis();
 		try {
+			//This should trim down all the domains with the values that are provided with the problem
+			for(Constraint c : network.getConstraints())
+				c.propagateConstraint();
+
+			SudokuFile f = Converter.ConstraintNetworkToSudokuFile(network,sudokuGrid.getN(),sudokuGrid.getP(),sudokuGrid.getQ());
+			System.out.println();
+			System.out.println(f);
+
 			solve(0);
 		}catch (VariableSelectionException e)
 		{
