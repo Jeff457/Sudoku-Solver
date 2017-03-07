@@ -270,6 +270,7 @@ public class BTSolver implements Runnable{
 	 */
 	private Variable getDegree()
 	{
+		//TODO---Update this to use the getNeighbors() method instead of finding them by hand
 		int constraints = 0;
 		Variable mostConstrained = null;
 
@@ -395,9 +396,17 @@ public class BTSolver implements Runnable{
 	{
 		startTime = System.currentTimeMillis();
 		try {
-			//This should trim down all the domains with the values that are provided with the problem
-			for(Constraint c : network.getConstraints())
-				c.propagateConstraint();
+
+			//Trim down starting variable domains using constraint propegation
+			//according to the number of assigned values we were given
+			int baseAssignedCount = 0;
+			for(Variable v : network.getVariables())
+				if(v.isAssigned())
+					baseAssignedCount++;
+
+			for(int i = 0; i < baseAssignedCount; i++)
+				for(Constraint c : network.getConstraints())
+					c.propagateConstraint();
 
 			SudokuFile f = Converter.ConstraintNetworkToSudokuFile(network,sudokuGrid.getN(),sudokuGrid.getP(),sudokuGrid.getQ());
 			System.out.println();
