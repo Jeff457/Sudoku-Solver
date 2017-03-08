@@ -231,7 +231,9 @@ public class BTSolver implements Runnable{
 	//TODO---Implement Naked Pairs
 	private boolean nakedPairs()
 	{
-		return false;
+		for(Constraint constraint : network.getConstraints())
+			constraint.propagateNakedPairs();
+		return network.isConsistent();
 	}
 
 	//TODO---Implement Naked Triples
@@ -315,20 +317,17 @@ public class BTSolver implements Runnable{
 			if(!v.isAssigned())
 			{
 				//Store all the unassigned variables that are constrained with Variable v
-				HashSet<Variable> unassignedVars = new HashSet<>();
-				List<Constraint> involvedConstraints = network.getConstraintsContainingVariable(v);
+				int constrainedCount = 0;
+				List<Variable> neighbors = network.getNeighborsOfVariable(v);
 
-				for(Constraint c : involvedConstraints)
-				{
-					for(Variable v2 : c.vars)
-						if(!v2.isAssigned() && !v2.equals(v))
-							unassignedVars.add(v2);
-				}
+				for(Variable v2 : neighbors)
+					if(!v2.isAssigned())
+						constrainedCount++;
 
 				//Now the Set of vars contains all the DISTINCT unassigned constrained variables
-				if(unassignedVars.size() > constraints)
+				if(constrainedCount > constraints)
 				{
-					constraints = unassignedVars.size();
+					constraints = constrainedCount;
 					mostConstrained = v;
 				}
 			}
@@ -406,7 +405,7 @@ public class BTSolver implements Runnable{
 					val2Conflicts = calculateConstrainingFactor(v,val2);
 					cache.put(val2,val2Conflicts);
 				}
-				return -1*Integer.compare(val1Conflicts,val2Conflicts);
+				return Integer.compare(val1Conflicts,val2Conflicts);
 			}
 		});
 		return domain;

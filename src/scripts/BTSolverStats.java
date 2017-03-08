@@ -19,7 +19,7 @@ public class BTSolverStats {
 	static ConsistencyCheck cc = ConsistencyCheck.ArcConsistency;
 	static ValueSelectionHeuristic valsh = ValueSelectionHeuristic.None;
 	static VariableSelectionHeuristic varsh = VariableSelectionHeuristic.MinimumRemainingValue;
-	static BTSolver.HeuristicCheck check = BTSolver.HeuristicCheck.NakedTriples;
+	static BTSolver.HeuristicCheck check = BTSolver.HeuristicCheck.None;
 	
 	public static List<SudokuFile> getPuzzlesFromFolder(File folder) {
 	    List<SudokuFile> puzzles = new ArrayList<SudokuFile>();
@@ -44,7 +44,7 @@ public class BTSolverStats {
 		try
 		{
 			t1.start();
-			t1.join(60000*3);
+			t1.join(60000*6);
 			if(t1.isAlive())
 			{
 				t1.interrupt();
@@ -85,7 +85,7 @@ public class BTSolverStats {
 		List<SudokuFile> puzzles = getPuzzlesFromFolder(folder);
 		List<runStats> statistics = new ArrayList<runStats>();
 		
-		puzzles = puzzles.subList(50, 53); //These are the hard puzzles
+		//puzzles = puzzles.subList(50, 53); //These are the hard puzzles
 		//puzzles = puzzles.subList(0, 10);
 		for(SudokuFile sf : puzzles)
 		{

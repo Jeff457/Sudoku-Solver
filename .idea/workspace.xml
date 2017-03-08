@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f33135b-9a50-4a87-a495-1dab7f50dbaf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cspSolver/BTSolver$1.class" afterPath="$PROJECT_DIR$/bin/cspSolver/BTSolver$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cspSolver/BTSolver$2.class" afterPath="$PROJECT_DIR$/bin/cspSolver/BTSolver$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cspSolver/BTSolver.class" afterPath="$PROJECT_DIR$/bin/cspSolver/BTSolver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/examples/BTSolverExample.class" afterPath="$PROJECT_DIR$/bin/examples/BTSolverExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/examples/LocalSolverExample.class" afterPath="$PROJECT_DIR$/bin/examples/LocalSolverExample.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/scripts/BTSolverStats.class" afterPath="$PROJECT_DIR$/bin/scripts/BTSolverStats.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/sudoku/Odometer.class" afterPath="$PROJECT_DIR$/bin/sudoku/Odometer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/sudoku/SudokuBoardReader.class" afterPath="$PROJECT_DIR$/bin/sudoku/SudokuBoardReader.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cspSolver/BTSolver.java" afterPath="$PROJECT_DIR$/src/cspSolver/BTSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cspSolver/Constraint.java" afterPath="$PROJECT_DIR$/src/cspSolver/Constraint.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/BTSolverStats.java" afterPath="$PROJECT_DIR$/src/scripts/BTSolverStats.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -28,11 +25,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BTSolver.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BTSolver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cspSolver/BTSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5385">
-              <caret line="410" column="11" lean-forward="true" selection-start-line="410" selection-start-column="11" selection-end-line="410" selection-end-column="11" />
+            <state relative-caret-position="377">
+              <caret line="234" column="45" lean-forward="false" selection-start-line="234" selection-start-column="45" selection-end-line="234" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,7 +40,7 @@
       <file leaf-file-name="Variable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cspSolver/Variable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-294">
+            <state relative-caret-position="935">
               <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
               <folding />
             </state>
@@ -53,14 +50,14 @@
       <file leaf-file-name="Converter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sudoku/Converter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1860">
+            <state relative-caret-position="2108">
               <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constraint.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Constraint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cspSolver/Constraint.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
@@ -73,7 +70,7 @@
       <file leaf-file-name="Domain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cspSolver/Domain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="2244">
               <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
               <folding />
             </state>
@@ -83,7 +80,7 @@
       <file leaf-file-name="ConstraintNetwork.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cspSolver/ConstraintNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="153">
               <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
@@ -116,9 +113,9 @@
         <option value="$PROJECT_DIR$/src/cspSolver/Domain.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/sudoku/Converter.java" />
-        <option value="$PROJECT_DIR$/src/cspSolver/BTSolver.java" />
         <option value="$PROJECT_DIR$/src/scripts/BTSolverStats.java" />
         <option value="$PROJECT_DIR$/src/cspSolver/Constraint.java" />
+        <option value="$PROJECT_DIR$/src/cspSolver/BTSolver.java" />
       </list>
     </option>
   </component>
@@ -129,10 +126,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
-    <option name="y" value="23" />
-    <option name="width" value="1391" />
-    <option name="height" value="877" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -149,8 +146,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -159,45 +155,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SudokuProjectJava" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SudokuShellMay28" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SudokuProjectJava" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SudokuShellMay28" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SudokuProjectJava" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cspSolver" />
+              <option name="myItemId" value="Sudoku-Solver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -671,6 +636,7 @@
       <workItem from="1488931466908" duration="31000" />
       <workItem from="1489000679652" duration="955000" />
       <workItem from="1489008802952" duration="2224000" />
+      <workItem from="1489011300130" duration="75000" />
     </task>
     <task id="LOCAL-00001" summary="Update and fix Degree heuristic (hopefully)">
       <created>1488827707740</created>
@@ -711,7 +677,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22914000" />
+    <option name="totallyTimeSpent" value="22989000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -723,7 +689,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="23" width="1391" height="877" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -740,7 +706,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14378145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1134,7 +1100,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sudoku/Converter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
+        <state relative-caret-position="2108">
           <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding />
         </state>
@@ -1188,7 +1154,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cspSolver/Domain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="2244">
           <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
           <folding />
         </state>
@@ -1196,7 +1162,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cspSolver/Variable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-294">
+        <state relative-caret-position="935">
           <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
           <folding />
         </state>
@@ -1204,19 +1170,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cspSolver/ConstraintNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="153">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cspSolver/BTSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5385">
-          <caret line="410" column="11" lean-forward="true" selection-start-line="410" selection-start-column="11" selection-end-line="410" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1225,6 +1181,16 @@
         <state relative-caret-position="435">
           <caret line="171" column="122" lean-forward="false" selection-start-line="171" selection-start-column="122" selection-end-line="171" selection-end-column="122" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cspSolver/BTSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="234" column="45" lean-forward="false" selection-start-line="234" selection-start-column="45" selection-end-line="234" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
