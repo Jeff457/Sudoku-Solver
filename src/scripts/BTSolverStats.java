@@ -85,7 +85,7 @@ public class BTSolverStats {
 		List<SudokuFile> puzzles = getPuzzlesFromFolder(folder);
 		List<runStats> statistics = new ArrayList<runStats>();
 		
-		puzzles = puzzles.subList(0, 10);
+		puzzles = puzzles.subList(50, 55);
 		for(SudokuFile sf : puzzles)
 		{
 			System.out.println(sf);

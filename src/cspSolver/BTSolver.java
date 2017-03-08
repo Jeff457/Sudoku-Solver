@@ -198,7 +198,34 @@ public class BTSolver implements Runnable{
 	 */
 	private boolean arcConsistency()
 	{
-		return false;
+		boolean stop = false;
+		while(!stop)
+		{
+			stop = true;
+			for(Constraint constraintGroup : network.getConstraints())
+			{
+				for(Variable var : constraintGroup.vars)
+				{
+					if(!var.isAssigned())
+						continue;
+
+					for(Variable otherVar : constraintGroup.vars)
+					{
+						if(var.equals(otherVar))
+							continue;
+						if(otherVar.size() != 1)
+						{
+							otherVar.removeValueFromDomain(var.getAssignment());
+							if(otherVar.size() == 1) //We caused a variable to get an assignment so we need to keep working
+								stop = false;
+						}
+						else if(otherVar.getAssignment().equals(var.getAssignment())) //Not consistent so we need to backtrack
+							return false;
+					}
+				}
+			}
+		}
+		return network.isConsistent();
 	}
 
 	//TODO---Implement Naked Pairs

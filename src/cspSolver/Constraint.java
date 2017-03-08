@@ -140,17 +140,6 @@ public class Constraint{
 	 */
 	public boolean propagateNakedTriples()
 	{
-//		SortedSet<Variable> nakedTriples = new TreeSet<>(new Comparator<Variable>() {
-//			@Override
-//			public int compare(Variable o1, Variable o2) {
-//				if(o1.getDomain().size() < o2.getDomain().size())
-//					return 1;
-//				if(o1.getDomain().size() > o2.getDomain().size())
-//					return -1;
-//				return 0;
-//			}
-//		});
-
 		ArrayList<Variable> threes = new ArrayList<>();
 		ArrayList<Variable> twos = new ArrayList<>();
 
