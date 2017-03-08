@@ -136,6 +136,52 @@ public class Constraint{
 	}
 
 	/**
+	 * TODO: Implement naked pairs
+	 * @return
+	 */
+	public boolean propagateNakedPairs()
+	{
+		List<Variable> pairs = new ArrayList<>();
+		List<Variable> nakedPairs = new ArrayList<>(2);
+
+		for (Variable v : vars)  // get all Variables with only 2 values left in its Domain
+		{
+			if (v.isAssigned())
+				continue;
+			if (v.getDomain().size() == 2)
+				pairs.add(v);
+		}
+
+		outer:
+		for (int i = 0; i < pairs.size() - 1; i++)  // for every Variable with 2 values left in its Domain
+		{
+			for (int j = i+1; j < pairs.size(); j++)
+			{
+				if (pairs.get(i).getDomain().isSubsetOf(pairs.get(j).getDomain()))  // check if another Variable has those same 2 values left in Domain
+				{
+					nakedPairs.add(pairs.get(i));
+					nakedPairs.add(pairs.get(j));
+					break outer;
+
+				}
+			}
+		}
+
+		if (nakedPairs.size() > 0)  // if we found any naked pairs
+		{
+			Domain domain = nakedPairs.get(0).getDomain();  // both variables have the same domain, so only need to grab 1
+			for (Variable v : vars)
+			{
+				if (!v.isAssigned() && !nakedPairs.contains(v))
+					v.removeValuesFromDomain(domain);
+			}
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
 	 * TODO: Implement naked triples
 	 */
 	public boolean propagateNakedTriples()
