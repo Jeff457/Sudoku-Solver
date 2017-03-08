@@ -395,7 +395,7 @@ public class BTSolver implements Runnable{
 					val1Conflicts = cache.get(val1);
 				else
 				{
-
+					val1Conflicts = calculateConstrainingFactor(v,val1);
 					cache.put(val1,val1Conflicts);
 				}
 
@@ -403,12 +403,23 @@ public class BTSolver implements Runnable{
 					val2Conflicts = cache.get(val2);
 				else
 				{
+					val2Conflicts = calculateConstrainingFactor(v,val2);
 					cache.put(val2,val2Conflicts);
 				}
-				return 0;
+				return -1*Integer.compare(val1Conflicts,val2Conflicts);
 			}
 		});
 		return domain;
+	}
+
+	private int calculateConstrainingFactor(Variable v, int value)
+	{
+		int constrainingFactor = 0;
+		List<Variable> neighbors = network.getNeighborsOfVariable(v);
+		for(Variable v2 : neighbors)
+			if(!v2.isAssigned() && v2.getDomain().contains(value))
+				constrainingFactor++;
+		return constrainingFactor;
 	}
 	/**
 	 * Called when solver finds a solution

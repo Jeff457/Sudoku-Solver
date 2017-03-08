@@ -16,7 +16,7 @@ import cspSolver.BTSolver.VariableSelectionHeuristic;
 public class BTSolverStats {
 
 	// Change these to test different configurations for the solver. 
-	static ConsistencyCheck cc = ConsistencyCheck.ForwardChecking;
+	static ConsistencyCheck cc = ConsistencyCheck.ArcConsistency;
 	static ValueSelectionHeuristic valsh = ValueSelectionHeuristic.None;
 	static VariableSelectionHeuristic varsh = VariableSelectionHeuristic.MinimumRemainingValue;
 	static BTSolver.HeuristicCheck check = BTSolver.HeuristicCheck.NakedTriples;
@@ -44,7 +44,7 @@ public class BTSolverStats {
 		try
 		{
 			t1.start();
-			t1.join(60000);
+			t1.join(60000*3);
 			if(t1.isAlive())
 			{
 				t1.interrupt();
@@ -85,7 +85,8 @@ public class BTSolverStats {
 		List<SudokuFile> puzzles = getPuzzlesFromFolder(folder);
 		List<runStats> statistics = new ArrayList<runStats>();
 		
-		puzzles = puzzles.subList(50, 55);
+		puzzles = puzzles.subList(50, 53); //These are the hard puzzles
+		//puzzles = puzzles.subList(0, 10);
 		for(SudokuFile sf : puzzles)
 		{
 			System.out.println(sf);
