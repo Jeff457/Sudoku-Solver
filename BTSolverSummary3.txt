@@ -1,7 +1,0 @@
-Consistency Check: None
-ValueSelectionHeuristic: None
-VariableSelectionHeuristic: None
-Solution found for 9/10puzzles
-average runTime: 2951
-average number of assignments per puzzle: 68020
-average number of backtracks per puzzle: 67967

@@ -194,7 +194,7 @@ public class BTSolver implements Runnable{
 	}
 	
 	/**
-	 * TODO: Implement Maintaining Arc Consistency.
+	 *
 	 */
 	private boolean arcConsistency()
 	{
@@ -228,7 +228,6 @@ public class BTSolver implements Runnable{
 		return network.isConsistent();
 	}
 
-	//TODO---Implement Naked Pairs
 	private boolean nakedPairs()
 	{
 		for(Constraint constraint : network.getConstraints())
@@ -236,7 +235,6 @@ public class BTSolver implements Runnable{
 		return network.isConsistent();
 	}
 
-	//TODO---Implement Naked Triples
 	private boolean nakedTriples()
 	{
 		for(Constraint constraint : network.getConstraints())
@@ -301,12 +299,10 @@ public class BTSolver implements Runnable{
 	}
 	
 	/**
-	 * TODO: Implement Degree heuristic
 	 * @return variable constrained by the most unassigned variables, null if all variables are assigned.
 	 */
 	private Variable getDegree()
 	{
-		//TODO---Update this to use the getNeighbors() method instead of finding them by hand
 		int constraints = 0;
 		Variable mostConstrained = null;
 
@@ -376,7 +372,7 @@ public class BTSolver implements Runnable{
 	}
 	
 	/**
-	 * TODO: LCV heuristic
+	 *
 	 */
 	public List<Integer> getValuesLCVOrder(Variable v)
 	{
@@ -440,24 +436,7 @@ public class BTSolver implements Runnable{
 	{
 		startTime = System.currentTimeMillis();
 		try {
-
-			//TODO---determine if this is allowed
-			//Trim down starting variable domains using constraint propegation
-//			for(Constraint c : network.getConstraints())
-//				c.propagateConstraint();
-/*
-			SudokuFile f = Converter.ConstraintNetworkToSudokuFile(network,sudokuGrid.getN(),sudokuGrid.getP(),sudokuGrid.getQ());
-			System.out.println();
-			System.out.println(f);
-
-			System.out.println();
-			System.out.println(network.isConsistent());
-*/
 			solve(0);
-
-			SudokuFile f = Converter.ConstraintNetworkToSudokuFile(network,sudokuGrid.getN(),sudokuGrid.getP(),sudokuGrid.getQ());
-			System.out.println();
-			System.out.println(f);
 		}catch (VariableSelectionException e)
 		{
 			System.out.println("error with variable selection heuristic.");

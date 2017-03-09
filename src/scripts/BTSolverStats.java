@@ -14,13 +14,6 @@ import cspSolver.BTSolver.ValueSelectionHeuristic;
 import cspSolver.BTSolver.VariableSelectionHeuristic;
 
 public class BTSolverStats {
-
-	// Change these to test different configurations for the solver. 
-	static ConsistencyCheck cc = ConsistencyCheck.ArcConsistency;
-	static ValueSelectionHeuristic valsh = ValueSelectionHeuristic.None;
-	static VariableSelectionHeuristic varsh = VariableSelectionHeuristic.MinimumRemainingValue;
-	static BTSolver.HeuristicCheck check = BTSolver.HeuristicCheck.None;
-	
 	public static List<SudokuFile> getPuzzlesFromFolder(File folder) {
 	    List<SudokuFile> puzzles = new ArrayList<SudokuFile>();
 		for (File fileEntry : folder.listFiles()) {
@@ -33,18 +26,18 @@ public class BTSolverStats {
 		return puzzles;
 	}
 	
-	public static runStats testSolver(BTSolver solver)
+	public static runStats testSolver(BTSolver solver, ConsistencyCheck consistencyCheck, ValueSelectionHeuristic valueSelect, VariableSelectionHeuristic varSelect, BTSolver.HeuristicCheck heurCheck)
 	{
-		solver.setConsistencyChecks(cc);
-		solver.setValueSelectionHeuristic(valsh);
-		solver.setVariableSelectionHeuristic(varsh);
-		solver.setHeuristicCheck(check);
+		solver.setConsistencyChecks(consistencyCheck);
+		solver.setValueSelectionHeuristic(valueSelect);
+		solver.setVariableSelectionHeuristic(varSelect);
+		solver.setHeuristicCheck(heurCheck);
 		
 		Thread t1 = new Thread(solver);
 		try
 		{
 			t1.start();
-			t1.join(60000*6);
+			t1.join(60000);
 			if(t1.isAlive())
 			{
 				t1.interrupt();
@@ -67,50 +60,55 @@ public class BTSolverStats {
 	
 	public static void main(String[] args)
 	{
-		String sep = System.getProperty("line.separator");
-		File results = new File("BTSolverResults.txt");
-		int count = 1;
-		while(results.exists())
-		{
-			results = new File("BTSolverResults" + count++ + ".txt");
-		}
-		File summary = new File("BTSolverSummary.txt");
-		count = 1;
-		while(summary.exists())
-		{
-			summary = new File("BTSolverSummary" + count++ + ".txt");
-		}
-		
+		File results = new File("BTSolverResultsTable.txt");
 		File folder = new File("ExampleSudokuFiles/");
-		List<SudokuFile> puzzles = getPuzzlesFromFolder(folder);
-		List<runStats> statistics = new ArrayList<runStats>();
-		
-		//puzzles = puzzles.subList(50, 53); //These are the hard puzzles
-		//puzzles = puzzles.subList(0, 10);
-		for(SudokuFile sf : puzzles)
-		{
-			System.out.println(sf);
-			BTSolver solver = new BTSolver(sf);
-			statistics.add(testSolver(solver));
-			System.out.println(statistics.get(statistics.size()-1).toString());
-		}
-		
-		try {
-			FileWriter fw = new FileWriter(results);
-			for(runStats rs : statistics)
-			{
-				fw.write(rs.toString() + sep);
-			}
-			fw.flush();
-			fw.close();
 
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		List<SudokuFile> puzzles = getPuzzlesFromFolder(folder);
+		List<runStats> easyStats = new ArrayList<runStats>();
+		List<runStats> mediumStats = new ArrayList<runStats>();
+		List<runStats> hardStats = new ArrayList<runStats>();
+
+		List<SudokuFile> easyPuzzles = puzzles.subList(0,5);
+		List<SudokuFile> mediumPuzzles = puzzles.subList(55,60);
+		List<SudokuFile> hardPuzzles = puzzles.subList(50,55);
+
+		ArrayList<String> output = new ArrayList<>();
+
+		int i = 1;
+		for(ValueSelectionHeuristic valueSelect : ValueSelectionHeuristic.values())
+		{
+			for(VariableSelectionHeuristic variableSelect : VariableSelectionHeuristic.values())
+			{
+				for(ConsistencyCheck consistencyCheck : ConsistencyCheck.values())
+				{
+					for(BTSolver.HeuristicCheck heuristicCheck : BTSolver.HeuristicCheck.values())
+					{
+						easyStats.clear();
+						mediumStats.clear();
+						hardStats.clear();
+
+						for(SudokuFile puzzle : easyPuzzles)
+							easyStats.add(testSolver(new BTSolver(puzzle),consistencyCheck,valueSelect,variableSelect,heuristicCheck));
+						for(SudokuFile puzzle : mediumPuzzles)
+							mediumStats.add(testSolver(new BTSolver(puzzle),consistencyCheck,valueSelect,variableSelect,heuristicCheck));
+						for(SudokuFile puzzle : hardPuzzles)
+							hardStats.add(testSolver(new BTSolver(puzzle),consistencyCheck,valueSelect,variableSelect,heuristicCheck));
+
+						output.add(statsToString(consistencyCheck,valueSelect,variableSelect,heuristicCheck,easyStats,mediumStats,hardStats));
+
+						System.out.print("Completed combination "+i+"/72.");
+						i++;
+					}
+				}
+			}
 		}
+
 		try{
-			FileWriter fw = new FileWriter(summary);
-			long totalRunTime = 0;
+			FileWriter fw = new FileWriter(results);
+
+			for(String str : output)
+				fw.write(str+System.lineSeparator());
+			/*long totalRunTime = 0;
 			long totalAssignments = 0;
 			long totalBackTracks = 0;
 			int totalSuccessful = 0;
@@ -138,13 +136,24 @@ public class BTSolverStats {
 			fw.write("Solution found for " + totalSuccessful + "/" + totalPuzzles + "puzzles" + sep);
 			fw.write("average runTime: " + (totalRunTime/totalSuccessful) + sep);
 			fw.write("average number of assignments per puzzle: " + (totalAssignments/totalSuccessful) + sep);
-			fw.write("average number of backtracks per puzzle: " + (totalBackTracks/totalSuccessful) + sep);
+			fw.write("average number of backtracks per puzzle: " + (totalBackTracks/totalSuccessful) + sep);*/
 
 			fw.flush();
 			fw.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	private static String statsToString(ConsistencyCheck consistencyCheck,
+										ValueSelectionHeuristic valueSelectionHeuristic,
+										VariableSelectionHeuristic variableSelectionHeuristic,
+										BTSolver.HeuristicCheck heuristicCheck,
+										List<runStats> easy,
+										List<runStats> medium,
+										List<runStats> hard)
+	{
+		StringBuilder builder = new StringBuilder();
+		return null;
 	}
 }
