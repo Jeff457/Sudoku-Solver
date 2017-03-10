@@ -65,19 +65,25 @@ public class Trail {
 	
 	/**
 	 * Pops changes pushed onto the trail until it reaches the latest marker. 
-	 * Also pops the latest marker. 
-	 * @param targetSize target position on the trail to backtrack to
-	 * @throws EmptyStackException if trail is empty
+	 * Also pops the latest marker.
 	 */
-	public void undo() throws EmptyStackException 
+	public void undo()
 	{
-		int targetSize = breadcrumbs.pop();
-		for (int size = trail.size(); size > targetSize; size--)
+		try
 		{
-			Object[] vPair = trail.pop();
-			Variable v = (Variable) vPair[0];
-			v.setDomain((Domain) vPair[1]);
+			int targetSize = breadcrumbs.pop();
+			for (int size = trail.size(); size > targetSize; size--)
+			{
+				Object[] vPair = trail.pop();
+				Variable v = (Variable) vPair[0];
+				v.setDomain((Domain) vPair[1]);
+			}
 		}
+		catch (EmptyStackException e)
+		{
+			System.out.println("HEY There was an empty stack exception but we caught it.");
+		}
+
 	}
 }
 

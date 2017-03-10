@@ -77,13 +77,13 @@ public class BTSolverStats {
 
 		int i = 1;
 		outer:
-		for(ValueSelectionHeuristic valueSelect : ValueSelectionHeuristic.values())
+		for(ConsistencyCheck consistencyCheck : ConsistencyCheck.values())
 		{
-			for(VariableSelectionHeuristic variableSelect : VariableSelectionHeuristic.values())
+			for(BTSolver.HeuristicCheck heuristicCheck : BTSolver.HeuristicCheck.values())
 			{
-				for(ConsistencyCheck consistencyCheck : ConsistencyCheck.values())
+				for(VariableSelectionHeuristic variableSelect : VariableSelectionHeuristic.values())
 				{
-					for(BTSolver.HeuristicCheck heuristicCheck : BTSolver.HeuristicCheck.values())
+					for(ValueSelectionHeuristic valueSelect : ValueSelectionHeuristic.values())
 					{
 						System.out.println("Starting next combination.");
 						easyStats.clear();
@@ -172,33 +172,42 @@ public class BTSolverStats {
 			}
 		}
 
+		boolean completedNone = false;
+		if(totalSuccessful == 0)
+		{
+			totalSuccessful = 1;
+			completedNone = true;
+		}
+
 		StringBuilder builder = new StringBuilder();
 		builder
-				.append(centerPad(consistencyCheck.name(),16))
+				.append(centerPad(consistencyCheck.name(),16)) //Consistency check type
 				.append(" | ")
-				.append(centerPad(valueSelectionHeuristic.name(),23))
+				.append(centerPad(heuristicCheck.name(),13)) //Heuristic type
 				.append(" | ")
-				.append(centerPad(variableSelectionHeuristic.name(),22))
+				.append(centerPad(variableSelectionHeuristic.name(),22)) //Variable select type
 				.append(" | ")
-				.append(centerPad(heuristicCheck.name(),13))
+				.append(centerPad(valueSelectionHeuristic.name(),23)) //Value select type
 				.append(" | ");
 
 		builder
-				.append(centerPad(String.valueOf((int)(totalRunTime/totalSuccessful)),15))
+				.append(centerPad(String.valueOf((int)(totalRunTime/totalSuccessful)),15)) //Average run time
 				.append(" | ")
-				.append(centerPad(String.valueOf((int)(totalAssignments/totalSuccessful)),10))
+				.append(centerPad(String.valueOf((int)(totalAssignments/totalSuccessful)),10)) //Average assignments
 				.append(" | ")
-				.append(centerPad(String.valueOf((int)(totalBackTracks/totalSuccessful)),10))
+				.append(centerPad(String.valueOf((int)(totalBackTracks/totalSuccessful)),10)) //Average backtracks
 				.append(" | ");
 
 		builder
-				.append(centerPad(String.valueOf((int)easyPercent),4))
+				.append(centerPad(String.valueOf((int)easyPercent),4)) //Percent of easy problems finished
 				.append(" | ")
-				.append(centerPad(String.valueOf((int)medPercent),4))
+				.append(centerPad(String.valueOf((int)medPercent),4)) //Percent of medium problems finished
 				.append(" | ")
-				.append(centerPad(String.valueOf((int)hardPercent),4))
+				.append(centerPad(String.valueOf((int)hardPercent),4))//Percent of hard problems finished
 				.append(" | ");
 
+		if(completedNone)
+			builder.append(centerPad("*None solved*","*None solved*".length()+2)).append(" | ");
 
 		return builder.toString();
 	}
