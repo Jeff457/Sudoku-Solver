@@ -98,50 +98,26 @@ public class BTSolverStats {
 							hardStats.add(testSolver(new BTSolver(puzzle),consistencyCheck,valueSelect,variableSelect,heuristicCheck));
 
 						output.add(statsToString(consistencyCheck,valueSelect,variableSelect,heuristicCheck,easyStats,mediumStats,hardStats));
+						writeStrings(results,output);
 
 						System.out.println("Completed combination "+i+"/72.");
 						i++;
-						if(i == 11)
-							break outer;
 					}
 				}
 			}
 		}
+	}
 
+	private static void writeStrings(File file, List<String> strings)
+	{
 		try{
-			FileWriter fw = new FileWriter(results);
+			if(file.exists())
+				file.delete();
 
-			for(String str : output)
+			FileWriter fw = new FileWriter(file);
+
+			for(String str : strings)
 				fw.write(str+System.lineSeparator());
-			/*long totalRunTime = 0;
-			long totalAssignments = 0;
-			long totalBackTracks = 0;
-			int totalSuccessful = 0;
-			int totalPuzzles = 0;
-			
-			for(runStats rs : statistics)
-			{
-				if(rs.isSolution())
-				{
-					totalRunTime += rs.getRuntime();
-					totalAssignments += rs.getNumAssignments();
-					totalBackTracks += rs.getNumBacktracks();
-					totalSuccessful++;
-				}
-				totalPuzzles++;
-			}
-			
-			System.out.print("Solution found for " + totalSuccessful + "/" + totalPuzzles + "puzzles" + sep);
-			System.out.print("average runTime: " + (totalRunTime/totalSuccessful) + sep);
-			System.out.print("average number of assignments per puzzle: " + (totalAssignments/totalSuccessful) + sep);
-			System.out.print("average number of backtracks per puzzle: " + (totalBackTracks/totalSuccessful) + sep);
-			fw.write("Consistency Check: " + cc + sep);
-			fw.write("ValueSelectionHeuristic: " + valsh + sep);
-			fw.write("VariableSelectionHeuristic: " + varsh + sep);
-			fw.write("Solution found for " + totalSuccessful + "/" + totalPuzzles + "puzzles" + sep);
-			fw.write("average runTime: " + (totalRunTime/totalSuccessful) + sep);
-			fw.write("average number of assignments per puzzle: " + (totalAssignments/totalSuccessful) + sep);
-			fw.write("average number of backtracks per puzzle: " + (totalBackTracks/totalSuccessful) + sep);*/
 
 			fw.flush();
 			fw.close();
@@ -198,32 +174,42 @@ public class BTSolverStats {
 
 		StringBuilder builder = new StringBuilder();
 		builder
-				.append(String.format("%16s",consistencyCheck.name()))//16
+				.append(centerPad(consistencyCheck.name(),16))
 				.append(" | ")
-				.append(String.format("%23s",valueSelectionHeuristic.name()))//16
+				.append(centerPad(valueSelectionHeuristic.name(),23))
 				.append(" | ")
-				.append(String.format("%22s",variableSelectionHeuristic.name()))//16
+				.append(centerPad(variableSelectionHeuristic.name(),22))
 				.append(" | ")
-				.append(String.format("%13s", heuristicCheck.name()))//16
+				.append(centerPad(heuristicCheck.name(),13))
 				.append(" | ");
 
 		builder
-				.append(String.format("%15s",(int)(totalRunTime/totalSuccessful)))
+				.append(centerPad(String.valueOf((int)(totalRunTime/totalSuccessful)),15))
 				.append(" | ")
-				.append(String.format("%10s",(int)(totalAssignments/totalSuccessful)))
+				.append(centerPad(String.valueOf((int)(totalAssignments/totalSuccessful)),10))
 				.append(" | ")
-				.append(String.format("%10s",(int)(totalBackTracks/totalSuccessful)))
+				.append(centerPad(String.valueOf((int)(totalBackTracks/totalSuccessful)),10))
 				.append(" | ");
 
 		builder
-				.append(String.format("%4s%%",(int)(easyPercent)))
+				.append(centerPad(String.valueOf((int)easyPercent),4))
 				.append(" | ")
-				.append(String.format("%4s%%",(int)(medPercent)))
+				.append(centerPad(String.valueOf((int)medPercent),4))
 				.append(" | ")
-				.append(String.format("%4s%%",(int)(hardPercent)))
+				.append(centerPad(String.valueOf((int)hardPercent),4))
 				.append(" | ");
 
 
 		return builder.toString();
+	}
+
+	private static String centerPad(String string, int size)
+	{
+		int padSize = size - string.length();
+		int padStart = string.length() + padSize / 2;
+
+		string = String.format("%" + padStart + "s", string);
+		string = String.format("%-" + size  + "s", string);
+		return string;
 	}
 }

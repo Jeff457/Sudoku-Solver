@@ -374,7 +374,7 @@ public class BTSolver implements Runnable{
 	/**
 	 *
 	 */
-	public List<Integer> getValuesLCVOrder(Variable v)
+	public List<Integer> getValuesLCVOrder(final Variable v)
 	{
 		ArrayList<Integer> domain = new ArrayList<>(v.getDomain().getValues());
 		final HashMap<Integer,Integer> cache = new HashMap<>();
