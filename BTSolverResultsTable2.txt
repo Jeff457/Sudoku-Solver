@@ -1,0 +1,72 @@
+      None       |     None      |          None          |          None           |      8111       |   96804    |   96718    |  80  |  20  |  0   | 
+      None       |     None      |          None          | LeastConstrainingValue  |      11060      |   120595   |   120501   |  60  |  20  |  0   | 
+      None       |     None      | MinimumRemainingValue  |          None           |      10637      |   124432   |   124355   |  60  |  20  |  0   | 
+      None       |     None      | MinimumRemainingValue  | LeastConstrainingValue  |      10991      |   120726   |   120608   |  60  |  20  |  0   | 
+      None       |     None      |         Degree         |          None           |        0        |     0      |     0      |  0   |  0   |  0   |  *None solved*  | 
+      None       |     None      |         Degree         | LeastConstrainingValue  |        0        |     0      |     0      |  0   |  0   |  0   |  *None solved*  | 
+      None       |  NakedPairs   |          None          |          None           |      5025       |    7173    |    6751    |  60  | 100  |  80  | 
+      None       |  NakedPairs   |          None          | LeastConstrainingValue  |      3860       |    4328    |    4302    | 100  |  80  |  80  | 
+      None       |  NakedPairs   | MinimumRemainingValue  |          None           |       831       |    903     |    873     | 100  | 100  |  80  | 
+      None       |  NakedPairs   | MinimumRemainingValue  | LeastConstrainingValue  |       761       |    862     |    832     | 100  | 100  |  80  | 
+      None       |  NakedPairs   |         Degree         |          None           |      7830       |   23778    |   23765    | 100  |  60  |  0   | 
+      None       |  NakedPairs   |         Degree         | LeastConstrainingValue  |      1114       |    3269    |    3248    |  80  |  60  |  0   | 
+      None       | NakedTriples  |          None          |          None           |      3363       |    7933    |    7905    |  80  | 100  |  40  | 
+      None       | NakedTriples  |          None          | LeastConstrainingValue  |      3586       |    3683    |    3653    | 100  |  80  |  60  | 
+      None       | NakedTriples  | MinimumRemainingValue  |          None           |      2699       |    2552    |    2522    | 100  | 100  |  80  | 
+      None       | NakedTriples  | MinimumRemainingValue  | LeastConstrainingValue  |      3870       |    3691    |    3661    | 100  | 100  |  80  | 
+      None       | NakedTriples  |         Degree         |          None           |      2062       |    5903    |    5896    | 100  |  20  |  0   | 
+      None       | NakedTriples  |         Degree         | LeastConstrainingValue  |      1109       |    3014    |    2999    |  80  |  40  |  0   | 
+      None       |     Both      |          None          |          None           |      4140       |    4514    |    4491    | 100  |  80  | 100  | 
+      None       |     Both      |          None          | LeastConstrainingValue  |      1813       |    1451    |    1430    | 100  |  80  | 100  | 
+      None       |     Both      | MinimumRemainingValue  |          None           |      1173       |    844     |    821     | 100  | 100  | 100  | 
+      None       |     Both      | MinimumRemainingValue  | LeastConstrainingValue  |      1320       |    946     |    921     | 100  | 100  | 100  | 
+      None       |     Both      |         Degree         |          None           |       24        |     69     |     66     | 100  |  20  |  0   | 
+      None       |     Both      |         Degree         | LeastConstrainingValue  |       326       |    738     |    728     |  80  |  40  |  0   | 
+ForwardChecking  |     None      |          None          |          None           |      2787       |    6025    |    5997    |  80  | 100  |  40  | 
+ForwardChecking  |     None      |          None          | LeastConstrainingValue  |       435       |    569     |    519     |  20  |  40  |  40  | 
+ForwardChecking  |     None      | MinimumRemainingValue  |          None           |      3582       |    3248    |    3206    |  40  |  80  |  60  | 
+ForwardChecking  |     None      | MinimumRemainingValue  | LeastConstrainingValue  |       232       |    375     |    330     |  20  | 100  |  40  | 
+ForwardChecking  |     None      |         Degree         |          None           |       61        |    434     |    429     | 100  |  0   |  0   | 
+ForwardChecking  |     None      |         Degree         | LeastConstrainingValue  |       61        |    420     |    415     | 100  |  0   |  0   | 
+ForwardChecking  |  NakedPairs   |          None          |          None           |      3286       |    3280    |    3258    | 100  | 100  |  80  | 
+ForwardChecking  |  NakedPairs   |          None          | LeastConstrainingValue  |      2346       |    1766    |    1733    |  40  |  40  |  80  | 
+ForwardChecking  |  NakedPairs   | MinimumRemainingValue  |          None           |      4806       |    3187    |    3156    |  60  |  80  | 100  | 
+ForwardChecking  |  NakedPairs   | MinimumRemainingValue  | LeastConstrainingValue  |      3460       |    2314    |    2287    | 100  | 100  | 100  | 
+ForwardChecking  |  NakedPairs   |         Degree         |          None           |      3266       |    6426    |    6416    | 100  |  40  |  0   | 
+ForwardChecking  |  NakedPairs   |         Degree         | LeastConstrainingValue  |       164       |    321     |    317     | 100  |  20  |  0   | 
+ForwardChecking  | NakedTriples  |          None          |          None           |      5741       |    5597    |    5575    | 100  | 100  |  60  | 
+ForwardChecking  | NakedTriples  |          None          | LeastConstrainingValue  |      3890       |    2742    |    2717    | 100  |  60  |  60  | 
+ForwardChecking  | NakedTriples  | MinimumRemainingValue  |          None           |      1252       |    839     |    813     | 100  | 100  |  60  | 
+ForwardChecking  | NakedTriples  | MinimumRemainingValue  | LeastConstrainingValue  |      1179       |    785     |    757     | 100  | 100  |  60  | 
+ForwardChecking  | NakedTriples  |         Degree         |          None           |      5276       |   10361    |   10356    | 100  |  40  |  0   | 
+ForwardChecking  | NakedTriples  |         Degree         | LeastConstrainingValue  |       387       |    750     |    745     | 100  |  40  |  0   | 
+ForwardChecking  |     Both      |          None          |          None           |      2974       |    2275    |    2256    | 100  | 100  | 100  | 
+ForwardChecking  |     Both      |          None          | LeastConstrainingValue  |      1608       |    945     |    925     | 100  |  60  | 100  | 
+ForwardChecking  |     Both      | MinimumRemainingValue  |          None           |      1165       |    610     |    588     | 100  | 100  | 100  | 
+ForwardChecking  |     Both      | MinimumRemainingValue  | LeastConstrainingValue  |      1198       |    623     |    599     | 100  | 100  | 100  | 
+ForwardChecking  |     Both      |         Degree         |          None           |       576       |    918     |    910     | 100  |  40  |  0   | 
+ForwardChecking  |     Both      |         Degree         | LeastConstrainingValue  |       838       |    1263    |    1251    |  80  |  20  |  0   | 
+ ArcConsistency  |     None      |          None          |          None           |       926       |    4350    |    4326    | 100  | 100  |  40  | 
+ ArcConsistency  |     None      |          None          | LeastConstrainingValue  |       93        |    342     |    317     | 100  |  80  |  40  | 
+ ArcConsistency  |     None      | MinimumRemainingValue  |          None           |      1172       |    1968    |    1936    |  80  | 100  |  60  | 
+ ArcConsistency  |     None      | MinimumRemainingValue  | LeastConstrainingValue  |       79        |    258     |    222     |  60  | 100  |  40  | 
+ ArcConsistency  |     None      |         Degree         |          None           |       33        |    333     |    327     | 100  |  0   |  0   | 
+ ArcConsistency  |     None      |         Degree         | LeastConstrainingValue  |        7        |     83     |     80     |  80  |  0   |  0   | 
+ ArcConsistency  |  NakedPairs   |          None          |          None           |      2710       |    3882    |    3856    |  40  | 100  |  80  | 
+ ArcConsistency  |  NakedPairs   |          None          | LeastConstrainingValue  |      1261       |    1357    |    1331    |  60  |  60  |  80  | 
+ ArcConsistency  |  NakedPairs   | MinimumRemainingValue  |          None           |      2427       |    2395    |    2370    | 100  | 100  | 100  | 
+ ArcConsistency  |  NakedPairs   | MinimumRemainingValue  | LeastConstrainingValue  |      2220       |    2159    |    2132    | 100  | 100  | 100  | 
+ ArcConsistency  |  NakedPairs   |         Degree         |          None           |      2105       |    6207    |    6200    | 100  |  40  |  0   | 
+ ArcConsistency  |  NakedPairs   |         Degree         | LeastConstrainingValue  |       119       |    325     |    323     |  80  |  20  |  0   | 
+ ArcConsistency  | NakedTriples  |          None          |          None           |      5497       |    7612    |    7587    |  60  | 100  |  80  | 
+ ArcConsistency  | NakedTriples  |          None          | LeastConstrainingValue  |      2020       |    2421    |    2398    | 100  |  80  |  60  | 
+ ArcConsistency  | NakedTriples  | MinimumRemainingValue  |          None           |      5394       |    5616    |    5590    |  80  | 100  | 100  | 
+ ArcConsistency  | NakedTriples  | MinimumRemainingValue  | LeastConstrainingValue  |       762       |    765     |    739     | 100  | 100  |  60  | 
+ ArcConsistency  | NakedTriples  |         Degree         |          None           |      3655       |   10241    |   10233    | 100  |  40  |  0   | 
+ ArcConsistency  | NakedTriples  |         Degree         | LeastConstrainingValue  |       410       |    1126    |    1113    |  80  |  60  |  0   | 
+ ArcConsistency  |     Both      |          None          |          None           |      2861       |    2948    |    2919    |  20  | 100  | 100  | 
+ ArcConsistency  |     Both      |          None          | LeastConstrainingValue  |      1135       |    915     |    895     | 100  |  60  | 100  | 
+ ArcConsistency  |     Both      | MinimumRemainingValue  |          None           |       842       |    592     |    570     | 100  | 100  | 100  | 
+ ArcConsistency  |     Both      | MinimumRemainingValue  | LeastConstrainingValue  |       835       |    600     |    577     | 100  | 100  | 100  | 
+ ArcConsistency  |     Both      |         Degree         |          None           |       378       |    801     |    792     | 100  |  60  |  0   | 
+ ArcConsistency  |     Both      |         Degree         | LeastConstrainingValue  |       588       |    1281    |    1273    | 100  |  40  |  0   | 

@@ -4,11 +4,12 @@
     <bookmark url="file://$PROJECT_DIR$/src/cspSolver/Trail.java" line="69" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f33135b-9a50-4a87-a495-1dab7f50dbaf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cspSolver/Trail.class" afterPath="$PROJECT_DIR$/bin/cspSolver/Trail.class" />
+    <list default="true" id="1f33135b-9a50-4a87-a495-1dab7f50dbaf" name="Default" comment="Added output from first run and tried to fix degree heuristic v2">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BTSolverResultsTable2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cspSolver/BTSolver.class" afterPath="$PROJECT_DIR$/bin/cspSolver/BTSolver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/scripts/BTSolverStats.class" afterPath="$PROJECT_DIR$/bin/scripts/BTSolverStats.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cspSolver/BTSolver.java" afterPath="$PROJECT_DIR$/src/cspSolver/BTSolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/BTSolverStats.java" afterPath="$PROJECT_DIR$/src/scripts/BTSolverStats.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="C:\Users\ewolfe\IdeaProjects\Sudoku-Solver\.idea\shelf/" />
@@ -25,13 +26,17 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BTSolver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BTSolver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cspSolver/BTSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="322" column="66" lean-forward="false" selection-start-line="322" selection-start-column="66" selection-end-line="322" selection-end-column="66" />
+            <state relative-caret-position="17">
+              <caret line="338" column="49" lean-forward="false" selection-start-line="338" selection-start-column="49" selection-end-line="338" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#8911#9037#0" expanded="true" />
+                <element signature="e#9036#9037#0" expanded="true" />
+                <element signature="e#9340#9961#0" expanded="true" />
+                <element signature="e#9960#9961#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -40,9 +45,37 @@
       <file leaf-file-name="Variable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cspSolver/Variable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="899">
+            <state relative-caret-position="935">
               <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1639#1640#0" expanded="false" />
+                <element signature="e#1666#1667#0" expanded="false" />
+                <element signature="e#1700#1701#0" expanded="false" />
+                <element signature="e#1740#1741#0" expanded="false" />
+                <element signature="e#1774#1775#0" expanded="false" />
+                <element signature="e#1796#1797#0" expanded="false" />
+                <element signature="e#1935#1936#0" expanded="false" />
+                <element signature="e#1952#1953#0" expanded="false" />
+                <element signature="e#1975#1976#0" expanded="false" />
+                <element signature="e#1992#1993#0" expanded="false" />
+                <element signature="e#2017#2018#0" expanded="false" />
+                <element signature="e#2036#2037#0" expanded="false" />
+                <element signature="e#2622#2623#0" expanded="false" />
+                <element signature="e#2651#2652#0" expanded="false" />
+                <element signature="e#2686#2687#0" expanded="false" />
+                <element signature="e#2718#2719#0" expanded="false" />
+                <element signature="e#2742#2743#0" expanded="false" />
+                <element signature="e#2769#2770#0" expanded="false" />
+                <element signature="e#2801#2802#0" expanded="false" />
+                <element signature="e#2821#2822#0" expanded="false" />
+                <element signature="e#2851#2852#0" expanded="false" />
+                <element signature="e#2869#2870#0" expanded="false" />
+                <element signature="e#3157#3158#0" expanded="false" />
+                <element signature="e#3190#3191#0" expanded="false" />
+                <element signature="e#4553#4554#0" expanded="false" />
+                <element signature="e#4584#4585#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,11 +87,6 @@
               <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="false" />
-                <element signature="e#422#432#0" expanded="false" />
-                <element signature="e#605#614#0" expanded="false" />
-                <element signature="e#945#970#0" expanded="false" />
-                <element signature="e#1023#1048#0" expanded="false" />
-                <element signature="e#1103#1128#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,23 +95,21 @@
       <file leaf-file-name="Constraint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cspSolver/Constraint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2635">
-              <caret line="171" column="122" lean-forward="false" selection-start-line="171" selection-start-column="122" selection-end-line="171" selection-end-column="122" />
+            <state relative-caret-position="577">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#695#696#0" expanded="false" />
-                <element signature="e#734#735#0" expanded="false" />
-                <element signature="e#779#780#0" expanded="false" />
-                <element signature="e#802#803#0" expanded="false" />
-                <element signature="e#1025#1026#0" expanded="false" />
-                <element signature="e#1043#1044#0" expanded="false" />
-                <element signature="e#1250#1251#0" expanded="false" />
-                <element signature="e#1275#1276#0" expanded="false" />
-                <element signature="e#1416#1417#0" expanded="false" />
-                <element signature="e#1460#1461#0" expanded="false" />
-                <element signature="e#5684#5685#0" expanded="false" />
-                <element signature="e#5719#5720#0" expanded="false" />
+                <element signature="e#1460#1461#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BTSolverResultsTable2.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BTSolverResultsTable2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="151" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,7 +121,6 @@
               <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="false" />
-                <element signature="e#492#501#0" expanded="false" />
                 <element signature="e#850#851#0" expanded="false" />
                 <element signature="e#874#875#0" expanded="false" />
                 <element signature="e#1937#1938#0" expanded="false" />
@@ -118,8 +143,8 @@
       <file leaf-file-name="BTSolverStats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scripts/BTSolverStats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="160" column="33" lean-forward="true" selection-start-line="160" selection-start-column="33" selection-end-line="160" selection-end-column="33" />
+            <state relative-caret-position="604">
+              <caret line="101" column="95" lean-forward="false" selection-start-line="101" selection-start-column="95" selection-end-line="101" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -130,7 +155,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1391#1392#0" expanded="false" />
+                <element signature="e#1439#1440#0" expanded="false" />
+                <element signature="e#1668#1669#0" expanded="false" />
+                <element signature="e#1693#1694#0" expanded="false" />
+                <element signature="e#1736#1737#0" expanded="false" />
+                <element signature="e#1759#1760#0" expanded="false" />
+                <element signature="e#1863#1873#0" expanded="false" />
+                <element signature="e#2512#2524#0" expanded="false" />
+                <element signature="e#3125#3137#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -163,9 +199,9 @@
         <option value="$PROJECT_DIR$/src/sudoku/Converter.java" />
         <option value="$PROJECT_DIR$/src/cspSolver/Constraint.java" />
         <option value="$PROJECT_DIR$/src/cspSolver/Trail.java" />
-        <option value="$PROJECT_DIR$/src/scripts/BTSolverStats.java" />
         <option value="$PROJECT_DIR$/BTSolverResultsTable.txt" />
         <option value="$PROJECT_DIR$/src/cspSolver/BTSolver.java" />
+        <option value="$PROJECT_DIR$/src/scripts/BTSolverStats.java" />
       </list>
     </option>
   </component>
@@ -196,9 +232,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -263,6 +296,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -752,7 +788,8 @@
       <workItem from="1489011300130" duration="1655000" />
       <workItem from="1489017718174" duration="2645000" />
       <workItem from="1489096952030" duration="3082000" />
-      <workItem from="1489105868485" duration="11634000" />
+      <workItem from="1489105868485" duration="11953000" />
+      <workItem from="1489167566225" duration="2172000" />
     </task>
     <task id="LOCAL-00001" summary="Update and fix Degree heuristic (hopefully)">
       <created>1488827707740</created>
@@ -817,11 +854,25 @@
       <option name="project" value="LOCAL" />
       <updated>1489114137515</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added output from first run and tried to fix degree heuristic">
+      <created>1489133664482</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1489133664482</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added output from first run and tried to fix degree heuristic v2">
+      <created>1489133684262</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1489133684262</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41930000" />
+    <option name="totallyTimeSpent" value="44421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -834,7 +885,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826748" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -845,26 +896,26 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2710396" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32624114" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2710396" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39249492" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -918,7 +969,9 @@
     <MESSAGE value="Adding tests for summarizing results" />
     <MESSAGE value="Center padding and change the timeout" />
     <MESSAGE value="Fixed a couple errors and added a little notice column" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a couple errors and added a little notice column" />
+    <MESSAGE value="Added output from first run and tried to fix degree heuristic" />
+    <MESSAGE value="Added output from first run and tried to fix degree heuristic v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added output from first run and tried to fix degree heuristic v2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -942,13 +995,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cspSolver/Trail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BTSolverSummary.txt" />
     <entry file="file://$PROJECT_DIR$/ExampleSudokuFiles/PE1.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -990,19 +1036,7 @@
         <state relative-caret-position="512">
           <caret line="195" column="46" lean-forward="false" selection-start-line="195" selection-start-column="46" selection-end-line="195" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#695#696#0" expanded="false" />
-            <element signature="e#734#735#0" expanded="false" />
-            <element signature="e#779#780#0" expanded="false" />
-            <element signature="e#802#803#0" expanded="false" />
-            <element signature="e#1025#1026#0" expanded="false" />
-            <element signature="e#1043#1044#0" expanded="false" />
-            <element signature="e#1250#1251#0" expanded="false" />
-            <element signature="e#1275#1276#0" expanded="false" />
-            <element signature="e#1416#1417#0" expanded="false" />
-            <element signature="e#1460#1461#0" expanded="false" />
-            <element signature="e#5684#5685#0" expanded="false" />
-            <element signature="e#5719#5720#0" expanded="false" />
+            <element signature="e#1460#1461#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1013,7 +1047,6 @@
           <caret line="156" column="24" lean-forward="false" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#492#501#0" expanded="false" />
             <element signature="e#850#851#0" expanded="false" />
             <element signature="e#874#875#0" expanded="false" />
             <element signature="e#1937#1938#0" expanded="false" />
@@ -1043,7 +1076,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="106" column="12" lean-forward="true" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1639#1640#0" expanded="false" />
+            <element signature="e#1666#1667#0" expanded="false" />
+            <element signature="e#1700#1701#0" expanded="false" />
+            <element signature="e#1740#1741#0" expanded="false" />
+            <element signature="e#1774#1775#0" expanded="false" />
+            <element signature="e#1796#1797#0" expanded="false" />
+            <element signature="e#1935#1936#0" expanded="false" />
+            <element signature="e#1952#1953#0" expanded="false" />
+            <element signature="e#1975#1976#0" expanded="false" />
+            <element signature="e#1992#1993#0" expanded="false" />
+            <element signature="e#2017#2018#0" expanded="false" />
+            <element signature="e#2036#2037#0" expanded="false" />
+            <element signature="e#2622#2623#0" expanded="false" />
+            <element signature="e#2651#2652#0" expanded="false" />
+            <element signature="e#2686#2687#0" expanded="false" />
+            <element signature="e#2718#2719#0" expanded="false" />
+            <element signature="e#2742#2743#0" expanded="false" />
+            <element signature="e#2769#2770#0" expanded="false" />
+            <element signature="e#2801#2802#0" expanded="false" />
+            <element signature="e#2821#2822#0" expanded="false" />
+            <element signature="e#2851#2852#0" expanded="false" />
+            <element signature="e#2869#2870#0" expanded="false" />
+            <element signature="e#3157#3158#0" expanded="false" />
+            <element signature="e#3190#3191#0" expanded="false" />
+            <element signature="e#4553#4554#0" expanded="false" />
+            <element signature="e#4584#4585#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1060,6 +1121,10 @@
           <caret line="413" column="12" lean-forward="true" selection-start-line="413" selection-start-column="12" selection-end-line="413" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8911#9037#0" expanded="true" />
+            <element signature="e#9036#9037#0" expanded="true" />
+            <element signature="e#9340#9961#0" expanded="true" />
+            <element signature="e#9960#9961#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1077,6 +1142,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8911#9037#0" expanded="true" />
+            <element signature="e#9036#9037#0" expanded="true" />
+            <element signature="e#9340#9961#0" expanded="true" />
+            <element signature="e#9960#9961#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1087,6 +1156,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8911#9037#0" expanded="true" />
+            <element signature="e#9036#9037#0" expanded="true" />
+            <element signature="e#9340#9961#0" expanded="true" />
+            <element signature="e#9960#9961#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1097,6 +1170,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8911#9037#0" expanded="true" />
+            <element signature="e#9036#9037#0" expanded="true" />
+            <element signature="e#9340#9961#0" expanded="true" />
+            <element signature="e#9960#9961#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1107,6 +1184,10 @@
           <caret line="160" column="5" lean-forward="false" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8911#9037#0" expanded="true" />
+            <element signature="e#9036#9037#0" expanded="true" />
+            <element signature="e#9340#9961#0" expanded="true" />
+            <element signature="e#9960#9961#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1129,7 +1210,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
           <caret line="119" column="42" lean-forward="true" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1639#1640#0" expanded="false" />
+            <element signature="e#1666#1667#0" expanded="false" />
+            <element signature="e#1700#1701#0" expanded="false" />
+            <element signature="e#1740#1741#0" expanded="false" />
+            <element signature="e#1774#1775#0" expanded="false" />
+            <element signature="e#1796#1797#0" expanded="false" />
+            <element signature="e#1935#1936#0" expanded="false" />
+            <element signature="e#1952#1953#0" expanded="false" />
+            <element signature="e#1975#1976#0" expanded="false" />
+            <element signature="e#1992#1993#0" expanded="false" />
+            <element signature="e#2017#2018#0" expanded="false" />
+            <element signature="e#2036#2037#0" expanded="false" />
+            <element signature="e#2622#2623#0" expanded="false" />
+            <element signature="e#2651#2652#0" expanded="false" />
+            <element signature="e#2686#2687#0" expanded="false" />
+            <element signature="e#2718#2719#0" expanded="false" />
+            <element signature="e#2742#2743#0" expanded="false" />
+            <element signature="e#2769#2770#0" expanded="false" />
+            <element signature="e#2801#2802#0" expanded="false" />
+            <element signature="e#2821#2822#0" expanded="false" />
+            <element signature="e#2851#2852#0" expanded="false" />
+            <element signature="e#2869#2870#0" expanded="false" />
+            <element signature="e#3157#3158#0" expanded="false" />
+            <element signature="e#3190#3191#0" expanded="false" />
+            <element signature="e#4553#4554#0" expanded="false" />
+            <element signature="e#4584#4585#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1139,7 +1248,6 @@
           <caret line="156" column="24" lean-forward="false" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#492#501#0" expanded="false" />
             <element signature="e#850#851#0" expanded="false" />
             <element signature="e#874#875#0" expanded="false" />
             <element signature="e#1937#1938#0" expanded="false" />
@@ -1164,6 +1272,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8911#9037#0" expanded="true" />
+            <element signature="e#9036#9037#0" expanded="true" />
+            <element signature="e#9340#9961#0" expanded="true" />
+            <element signature="e#9960#9961#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1174,6 +1286,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8911#9037#0" expanded="true" />
+            <element signature="e#9036#9037#0" expanded="true" />
+            <element signature="e#9340#9961#0" expanded="true" />
+            <element signature="e#9960#9961#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1184,6 +1300,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8911#9037#0" expanded="true" />
+            <element signature="e#9036#9037#0" expanded="true" />
+            <element signature="e#9340#9961#0" expanded="true" />
+            <element signature="e#9960#9961#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1252,11 +1372,6 @@
           <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#422#432#0" expanded="false" />
-            <element signature="e#605#614#0" expanded="false" />
-            <element signature="e#945#970#0" expanded="false" />
-            <element signature="e#1023#1048#0" expanded="false" />
-            <element signature="e#1103#1128#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1290,7 +1405,6 @@
           <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#492#501#0" expanded="false" />
             <element signature="e#850#851#0" expanded="false" />
             <element signature="e#874#875#0" expanded="false" />
             <element signature="e#1937#1938#0" expanded="false" />
@@ -1305,28 +1419,6 @@
             <element signature="e#3487#3488#0" expanded="false" />
             <element signature="e#3719#3720#0" expanded="false" />
             <element signature="e#3750#3751#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cspSolver/Constraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2635">
-          <caret line="171" column="122" lean-forward="false" selection-start-line="171" selection-start-column="122" selection-end-line="171" selection-end-column="122" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#695#696#0" expanded="false" />
-            <element signature="e#734#735#0" expanded="false" />
-            <element signature="e#779#780#0" expanded="false" />
-            <element signature="e#802#803#0" expanded="false" />
-            <element signature="e#1025#1026#0" expanded="false" />
-            <element signature="e#1043#1044#0" expanded="false" />
-            <element signature="e#1250#1251#0" expanded="false" />
-            <element signature="e#1275#1276#0" expanded="false" />
-            <element signature="e#1416#1417#0" expanded="false" />
-            <element signature="e#1460#1461#0" expanded="false" />
-            <element signature="e#5684#5685#0" expanded="false" />
-            <element signature="e#5719#5720#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1358,9 +1450,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cspSolver/Variable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
+        <state relative-caret-position="935">
           <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1639#1640#0" expanded="false" />
+            <element signature="e#1666#1667#0" expanded="false" />
+            <element signature="e#1700#1701#0" expanded="false" />
+            <element signature="e#1740#1741#0" expanded="false" />
+            <element signature="e#1774#1775#0" expanded="false" />
+            <element signature="e#1796#1797#0" expanded="false" />
+            <element signature="e#1935#1936#0" expanded="false" />
+            <element signature="e#1952#1953#0" expanded="false" />
+            <element signature="e#1975#1976#0" expanded="false" />
+            <element signature="e#1992#1993#0" expanded="false" />
+            <element signature="e#2017#2018#0" expanded="false" />
+            <element signature="e#2036#2037#0" expanded="false" />
+            <element signature="e#2622#2623#0" expanded="false" />
+            <element signature="e#2651#2652#0" expanded="false" />
+            <element signature="e#2686#2687#0" expanded="false" />
+            <element signature="e#2718#2719#0" expanded="false" />
+            <element signature="e#2742#2743#0" expanded="false" />
+            <element signature="e#2769#2770#0" expanded="false" />
+            <element signature="e#2801#2802#0" expanded="false" />
+            <element signature="e#2821#2822#0" expanded="false" />
+            <element signature="e#2851#2852#0" expanded="false" />
+            <element signature="e#2869#2870#0" expanded="false" />
+            <element signature="e#3157#3158#0" expanded="false" />
+            <element signature="e#3190#3191#0" expanded="false" />
+            <element signature="e#4553#4554#0" expanded="false" />
+            <element signature="e#4584#4585#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1368,15 +1488,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/BTSolverStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="160" column="33" lean-forward="true" selection-start-line="160" selection-start-column="33" selection-end-line="160" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1391#1392#0" expanded="false" />
+            <element signature="e#1439#1440#0" expanded="false" />
+            <element signature="e#1668#1669#0" expanded="false" />
+            <element signature="e#1693#1694#0" expanded="false" />
+            <element signature="e#1736#1737#0" expanded="false" />
+            <element signature="e#1759#1760#0" expanded="false" />
+            <element signature="e#1863#1873#0" expanded="false" />
+            <element signature="e#2512#2524#0" expanded="false" />
+            <element signature="e#3125#3137#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1384,17 +1507,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cspSolver/BTSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="322" column="66" lean-forward="false" selection-start-line="322" selection-start-column="66" selection-end-line="322" selection-end-column="66" />
+        <state relative-caret-position="17">
+          <caret line="338" column="49" lean-forward="false" selection-start-line="338" selection-start-column="49" selection-end-line="338" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8911#9037#0" expanded="true" />
+            <element signature="e#9036#9037#0" expanded="true" />
+            <element signature="e#9340#9961#0" expanded="true" />
+            <element signature="e#9960#9961#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/BTSolverStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="101" column="95" lean-forward="false" selection-start-line="101" selection-start-column="95" selection-end-line="101" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cspSolver/Constraint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#1460#1461#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BTSolverResultsTable2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="151" />
+          <folding />
         </state>
       </provider>
     </entry>

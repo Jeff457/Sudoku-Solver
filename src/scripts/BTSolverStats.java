@@ -61,6 +61,8 @@ public class BTSolverStats {
 	
 	public static void main(String[] args)
 	{
+		long startTime = System.currentTimeMillis();
+
 		File results = new File("BTSolverResultsTable.txt");
 		File folder = new File("ExampleSudokuFiles/");
 
@@ -106,6 +108,9 @@ public class BTSolverStats {
 				}
 			}
 		}
+
+		long elapsedTime = System.currentTimeMillis()-startTime;
+		System.out.println("Total elapsed time is: "+elapsedTime+" milliseconds.");
 	}
 
 	private static void writeStrings(File file, List<String> strings)
