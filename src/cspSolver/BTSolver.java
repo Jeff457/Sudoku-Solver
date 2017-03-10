@@ -321,7 +321,7 @@ public class BTSolver implements Runnable{
 						constrainedCount++;
 
 				//Now the Set of vars contains all the DISTINCT unassigned constrained variables
-				if(constrainedCount > constraints)
+				if(constrainedCount >= constraints)
 				{
 					constraints = constrainedCount;
 					mostConstrained = v;
